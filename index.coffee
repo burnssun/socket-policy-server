@@ -30,5 +30,9 @@ server = require("net").createServer (stream) ->
     stream.end()
     return
 
+  stream.on "error", (err)->
+    console.log "error", err.stack
+    return
+
 
 server.listen(843)
